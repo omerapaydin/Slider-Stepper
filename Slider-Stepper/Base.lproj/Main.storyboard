@@ -1,24 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Slider_Stepper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-eV-jEo">
+                                <rect key="frame" x="118" y="196" width="156" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="be1-VI-WDH"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderDegis:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hlo-lG-Fev"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slider:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fin-oZ-vIx">
+                                <rect key="frame" x="130" y="112" width="133" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="IH1-uF-Osg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stepper:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8r-TV-noe">
+                                <rect key="frame" x="130" y="358" width="133" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OaG-4u-fkw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-oj-U9Y">
+                                <rect key="frame" x="149" y="440" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperDegis:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vxy-32-m3k"/>
+                                </connections>
+                            </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxp-V7-LMo">
+                                <rect key="frame" x="125" y="590" width="142" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="nwS-gz-yQ4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tikla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bXL-Ct-LK6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BFy-oj-U9Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="149" id="0LJ-Da-Q5N"/>
+                            <constraint firstItem="fin-oZ-vIx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="0kI-Fn-tBk"/>
+                            <constraint firstItem="I8r-TV-noe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="358" id="8wU-G1-rVE"/>
+                            <constraint firstItem="BFy-oj-U9Y" firstAttribute="centerX" secondItem="Xxp-V7-LMo" secondAttribute="centerX" id="IOP-bE-KaG"/>
+                            <constraint firstItem="fin-oZ-vIx" firstAttribute="trailing" secondItem="I8r-TV-noe" secondAttribute="trailing" id="MxM-bC-KV5"/>
+                            <constraint firstItem="mN9-eV-jEo" firstAttribute="top" secondItem="fin-oZ-vIx" secondAttribute="bottom" constant="40" id="NMT-Dl-DFG"/>
+                            <constraint firstItem="fin-oZ-vIx" firstAttribute="leading" secondItem="I8r-TV-noe" secondAttribute="leading" id="Psz-hi-0hc"/>
+                            <constraint firstItem="fin-oZ-vIx" firstAttribute="centerX" secondItem="mN9-eV-jEo" secondAttribute="centerX" id="WrP-Ui-bio"/>
+                            <constraint firstItem="mN9-eV-jEo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z3D-5e-1gf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xxp-V7-LMo" secondAttribute="bottom" constant="173" id="c1B-z3-PTW"/>
+                            <constraint firstItem="I8r-TV-noe" firstAttribute="centerX" secondItem="BFy-oj-U9Y" secondAttribute="centerX" id="g8X-7D-QKn"/>
+                            <constraint firstItem="Xxp-V7-LMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="lhf-Uj-TSj"/>
+                            <constraint firstItem="BFy-oj-U9Y" firstAttribute="top" secondItem="I8r-TV-noe" secondAttribute="bottom" constant="38" id="vJA-F2-Skh"/>
+                            <constraint firstItem="mN9-eV-jEo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="w7J-Xm-wFf"/>
+                            <constraint firstItem="fin-oZ-vIx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="xNI-IE-2Bg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="mN9-eV-jEo" id="whB-Mm-GHJ"/>
+                        <outlet property="sliderLabel" destination="fin-oZ-vIx" id="faZ-Nl-Smj"/>
+                        <outlet property="stepper" destination="BFy-oj-U9Y" id="V59-sd-Qdp"/>
+                        <outlet property="stepperLabel" destination="I8r-TV-noe" id="xbd-hW-LSZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="61.832061068702288" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
